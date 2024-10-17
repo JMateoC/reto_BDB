@@ -5,12 +5,12 @@ function sortedSquares(array, s) {
   let arraySquares = [];
 
   if (array.length === 0) {
-    console.log("el arreglo no debe estar vacío");
+    console.log("el arreglo debe contener solo números");
     return;
   }
 
   for (let number of array) {
-    if (isNaN(number)) {
+    if (typeof number !== "number") {
       console.log("el arreglo debe contener solo números");
       return;
     }
@@ -48,10 +48,12 @@ function sortedSquares(array, s) {
 let arrayE = [-6, -5, 0, 5, 6];
 
 console.log("Arreglo original:", arrayE);
-console.log(
-  "Arreglo de cuadrados ordenados de forma ascendente:",
-  sortedSquares(arrayE, 9)
-);
+if (sortedSquares(arrayE, 9) != undefined) {
+  console.log(
+    "Arreglo de cuadrados ordenados de forma ascendente:",
+    sortedSquares(arrayE, 9)
+  );
+}
 
 /* ejemplos
 [1, 2, 3, 5, 6, 8, 9]

@@ -1,5 +1,8 @@
 function coinsChange(array) {
-  if (array.length === 0 || array.some((number) => number <= 0)) {
+  if (
+    array.length === 0 ||
+    array.some((number) => !Number.isInteger(number) || number <= 0)
+  ) {
     console.log(
       "El arreglo no debe estar vacío y debe contener números enteros positivos"
     );
@@ -24,7 +27,10 @@ function coinsChange(array) {
 }
 
 let coins = [5, 7, 1, 1, 2, 3, 22];
-console.log(coinsChange(coins));
+
+if (coinsChange(coins) != undefined) {
+  console.log(coinsChange(coins));
+}
 
 /* ejemplos
 [1, 1, 1, 1, 1]
